@@ -1,0 +1,82 @@
+{
+  "info": {
+    "name": "Blog API",
+    "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+    "description": "Тестирование API блога",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"johndoe\",\n  \"email\": \"johndoe@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["users"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Post",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"My First Post\",\n  \"content\": \"This is the content of my first post.\",\n  \"user_id\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/posts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["posts"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Comment",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"content\": \"Great post!\",\n  \"user_id\": 1,\n  \"post_id\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/comments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["comments"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Post with Comments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/posts/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["posts", "1"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
